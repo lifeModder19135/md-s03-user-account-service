@@ -1,13 +1,11 @@
+package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
-/**
- * 
- */
 public enum AccountStatus {
-    this.ACTIVE,
-    this.STALE,
-    this.INACTIVE,
-    this.INCOMPLIANT,
-    this.SUSPENDED,
-    this.REVOKED,
-    this.PROBATIONARY
+    ACTIVE,
+    STALE,
+    INACTIVE,
+    INCOMPLIANT,
+    SUSPENDED,
+    REVOKED,
+    PROBATIONARY
 }

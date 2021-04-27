@@ -16,11 +16,11 @@ public class Address {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ADDRESS_ID")
-    public Long AddressId;
+    public int AddressId;
 
 	@Column(name = "ADDRESSEE")
 	@NotBlank(message="Unique user ID is required.")
-	private String addressee;
+	private Long addressee;
 
 	@Column(name = "STREET_LINE_1")
 	@NotBlank(message="Street Address is required.")
