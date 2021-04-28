@@ -1,5 +1,4 @@
-
-import java.util.*;
+package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
