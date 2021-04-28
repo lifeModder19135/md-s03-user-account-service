@@ -1,5 +1,5 @@
 package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
-public class UserProfile {
+public class AccountUserProfile {
 
 }

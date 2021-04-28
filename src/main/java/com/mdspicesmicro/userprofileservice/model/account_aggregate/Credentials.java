@@ -1,9 +1,13 @@
+package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
-import java.util.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
 
-
-
-
+@Entity
+@Table(name = "CREDENTIALS")
 class Credentials {
 
 
@@ -13,12 +17,17 @@ class Credentials {
     }
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @@Column(name = "")
     private String username;
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @@Column(name = "")
     private Password password;
 
 
-    private Password bcrypt;
+    private PasswordEncoder bcrypt;
 
 }
