@@ -1,10 +1,12 @@
+package com.mdspicesmicro.userprofileservice.model.user_aggregate;
+
 
 /**
  * 
  */
 enum DeviceTypes {
-    this.PHONE,
-    this.TABLET,
-    this.LAPTOP,
-    this.PC
+    PHONE,
+    TABLET,
+    LAPTOP,
+    PC
 }

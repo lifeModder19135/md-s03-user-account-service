@@ -1,10 +1,10 @@
+package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
-/**
- * 
- */
+
+
 enum UserRole {
-    this.GUEST,
-    this.EMPLOYEE,
-    this.ADMIN,
-    this.DEVELOPER
+    GUEST,
+    EMPLOYEE,
+    ADMIN,
+    DEVELOPER
 }

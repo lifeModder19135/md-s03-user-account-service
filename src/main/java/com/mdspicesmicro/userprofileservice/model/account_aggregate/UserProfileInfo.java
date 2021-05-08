@@ -1,25 +1,16 @@
+package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
-import java.util.*;
+import java.nio.file.Path;
 
-/**
- * 
- */
 public class UserProfileInfo {
 
-    /**
-     * Default constructor
-     */
+    
     public UserProfileInfo() {
     }
 
-    /**
-     * 
-     */
-    private Image ProfilePicture;
+    private Path ProfilePicture;
 
-    /**
-     * 
-     */
+  
     private String bioText;
 
 

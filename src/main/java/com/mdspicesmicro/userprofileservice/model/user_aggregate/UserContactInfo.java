@@ -1,50 +1,35 @@
+package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
-import java.util.*;
 
-/**
- * 
- */
+import javax.persistence.Embeddable;
+import javax.validation.constraints.Email;
+
+@Embeddable
 class UserContactInfo {
 
-    /**
-     * Default constructor
-     */
+    
     UserContactInfo() {
     }
 
-    /**
-     * 
-     */
+    
     private Long userId;
 
-    /**
-     * 
-     */
+    
     private Email primaryEmail;
 
-    /**
-     * 
-     */
+    
     private Email secondaryEmail;
 
-    /**
-     * 
-     */
-    private Phone primaryPhone;
+    
+    private PhoneNumber primaryPhone;
 
-    /**
-     * 
-     */
-    private Phone secondaryPhone;
+    
+    private PhoneNumber secondaryPhone;
 
-    /**
-     * 
-     */
-    private Url facebookAddress;
+    
+    private String facebookAddress;
 
-    /**
-     * 
-     */
+    
     private String twitterId;
 
 

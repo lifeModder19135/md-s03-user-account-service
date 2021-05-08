@@ -1,9 +1,6 @@
+package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
-import java.util.*;
 
-/**
- * 
- */
 public class Credit {
 
     /**
@@ -15,11 +12,9 @@ public class Credit {
     /**
      * 
      */
-    private Money amount;
+    private double amount;
 
-    /**
-     * 
-     */
+   
     private CreditStatus status;
 
 

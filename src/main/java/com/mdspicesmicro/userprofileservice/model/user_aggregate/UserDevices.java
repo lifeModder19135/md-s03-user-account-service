@@ -1,26 +1,20 @@
+package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
-import java.util.*;
 
-/**
- * 
- */
+import java.util.List;
+
+
 class UserDevices {
 
-    /**
-     * Default constructor
-     */
+    
     UserDevices() {
     }
 
-    /**
-     * 
-     */
+    
     private Long userId;
 
-    /**
-     * 
-     */
-    private list<Device> userDevices;
+    
+    private List<Device> userDevices;
 
 
 }

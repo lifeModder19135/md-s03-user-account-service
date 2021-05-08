@@ -1,5 +1,6 @@
+package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
-import java.util.*;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,8 +35,8 @@ public class UserAccount {
     
     
     public UserAccount(){
-    	user = new User(null, null, null, null); //todo -- add proper params
-    	metrics = new AccountMetrics(accountId)
+    	//user = new User(null, null, null, null); //todo -- add proper params
+    	//metrics = new AccountMetrics(accountId)
     	
     }
 

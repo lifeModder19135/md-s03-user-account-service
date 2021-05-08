@@ -1,9 +1,6 @@
+package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
-import java.util.*;
 
-/**
- * 
- */
 class AccountState {
 
     /**
@@ -25,7 +22,7 @@ class AccountState {
     /**
      * 
      */
-    private void pwdStrength;
+    private String pwdStrength;
 
     /**
      * 

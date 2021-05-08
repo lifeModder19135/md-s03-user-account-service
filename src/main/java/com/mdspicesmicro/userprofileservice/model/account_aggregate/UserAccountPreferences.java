@@ -1,9 +1,8 @@
+package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
-import java.util.*;
 
-/**
- * 
- */
+
+
 class UserAccountPreferences {
 
     /**
@@ -15,7 +14,7 @@ class UserAccountPreferences {
     /**
      * 
      */
-    private AppViewTheme appViewTheme;
+    //rivate AppViewTheme appViewTheme;
 
     /**
      * 

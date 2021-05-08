@@ -1,41 +1,28 @@
+package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
-import java.util.*;
+import javax.persistence.Embeddable;
 
-/**
- * 
- */
+@Embeddable
 class UserActivityMetrics {
 
-    /**
-     * Default constructor
-     */
+    
     UserActivityMetrics() {
     }
 
-    /**
-     * 
-     */
+    
     private float avgDailyImpressions;
 
-    /**
-     * 
-     */
+    
     private int daysSinceLastPurchase;
 
-    /**
-     * 
-     */
+    
     private double TotalAmtSpent;
 
-    /**
-     * 
-     */
+    
     private float frequencyOfOrders;
 
-    /**
-     * 
-     */
-    private Product mostPurchasedProduct;
+    
+    private Long mostPurchasedProductId;
 
 
 }

@@ -1,9 +1,8 @@
+package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
-import java.util.*;
 
-/**
- * 
- */
+
+
 class Credentials {
 
     /**

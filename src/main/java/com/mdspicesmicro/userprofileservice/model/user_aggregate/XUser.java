@@ -23,9 +23,10 @@ public class XUser {
     private int active;
 
     private String roles = "";
-
+    
     private String permissions = "";
 
+    
     public XUser(String uname, String pwd, String roles, String permissions) {
         this.username = uname;
         this.password = pwd;
