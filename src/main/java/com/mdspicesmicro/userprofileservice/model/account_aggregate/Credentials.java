@@ -8,6 +8,9 @@ class Credentials {
    
     Credentials() {
     }
+    @Id
+    @MapsId()
+    private Long userId;
 
     
     private String username;

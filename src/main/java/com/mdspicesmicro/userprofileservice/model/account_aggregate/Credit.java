@@ -9,9 +9,9 @@ public class Credit {
     public Credit() {
     }
 
-    /**
-     * 
-     */
+    private Long id
+    
+
     private double amount;
 
    
