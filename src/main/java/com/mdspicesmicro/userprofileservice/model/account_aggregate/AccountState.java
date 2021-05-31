@@ -1,6 +1,11 @@
 package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
+import org.springframework.data.relational.core.mapping.Table;
 
+import lombok.Data;
+
+@Data
+@Table("ACCT_STATE")
 class AccountState {
 
     /**
@@ -9,24 +14,16 @@ class AccountState {
     AccountState() {
     }
 
-    /**
-     * 
-     */
-    private Long id;
+    @Id
+    private Long accountId;
 
-    /**
-     * 
-     */
+
     private int ageInDays;
-
-    /**
-     * 
-     */
+    
+    
     private String pwdStrength;
-
-    /**
-     * 
-     */
+    
+    
     private AccountStatus status;
 
 
