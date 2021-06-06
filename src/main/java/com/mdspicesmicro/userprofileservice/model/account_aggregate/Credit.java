@@ -12,22 +12,20 @@ import org.springframework.data.annotation.Id;
 @Table("CREDIT")
 public class Credit {
 
-    /**
-     * Default constructor
-     */
+
     public Credit() {
     	this.amount = 0.00;
-    	this.status = "status.PENDING";
+    	this.status = CreditStatus.PENDING;
     }
     
     @Id
 	@Column(value="account_id")
-    private Long userId;
+    private Long accountId;
     
     @Column(value="amount")
     private double amount;
     
-    @Column(value="account_id")
+    @Column(value="account_")
     private CreditStatus status;
 
 

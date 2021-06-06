@@ -2,7 +2,7 @@ package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
 public class Email {
 	
-	private final String cleanedEmail;
+	private String cleanedEmail;
 	
 	private String userId;
 	

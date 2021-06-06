@@ -8,50 +8,74 @@ import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.PrimaryKeyJoinColumns;
+import javax.persistence.SecondaryTable;
+import javax.persistence.SecondaryTables;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Generated;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 
 import com.mdspicesmicro.userprofileservice.model.user_aggregate.User;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
 @Entity
 @Table(name="USER_ACCOUNTS")
+
 public class Account {
 
 	
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue( )
+	@Column(value="account_id")
     private Long accountId;
     
+	@Setter
 	@Column(value="user_id")
 	@ManyToOne
-    private User user;
+    private Long userId;
     
+	@Setter
 	@Column(value="credentials")
 	@OneToOne
+	@PrimaryKeyJoinColumn(name="accountId")
     private Credentials credentials;
     
+	@Setter
+	@Column(value="user_profile")
 	@OneToOne
-	@JoinColumn(name="profile_info")
+	@PrimaryKeyJoinColumn(name="accountId")
     private UserProfileInfo userProfileInfo;
     
+	@Setter
+	@Column(value="account_credit")
 	@OneToOne
-	@JoinColumn(name="credit")
+	@PrimaryKeyJoinColumn(name="accountId")
+	@Autowired
     private Credit acctCredit;
     
+	@Column(value="account_state")
+	@OneToOne
+	@PrimaryKeyJoinColumn(name="accountId")
+	@Autowired
+    private AccountState acctState;
     
-    private AccountState state;
+    // Currently has no purpose, but that will change with time
     
+    //private AccountMetrics metrics;
     
-    private AccountMetrics metrics;
-    
-    
-    public Account(Credentials cred, UserProfileInfo info ){
-    	
+    @Builder
+    public Account(Long userId, Credentials cred, UserProfileInfo info){
+    	this.userId = userId;
     	this.credentials = cred;
     	this.userProfileInfo = info;
     	

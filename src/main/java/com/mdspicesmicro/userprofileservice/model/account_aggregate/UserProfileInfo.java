@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import org.springframework.data.relational.core.mapping.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.MapsId;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
@@ -25,6 +26,7 @@ public class UserProfileInfo {
     }
     
     @Id
+    @MapsId
 	@Column(value="account_id")
     private Long accountId;
     

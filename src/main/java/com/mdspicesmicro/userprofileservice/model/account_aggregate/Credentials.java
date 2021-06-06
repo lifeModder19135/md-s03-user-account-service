@@ -1,5 +1,8 @@
 package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
+import javax.persistence.MapsId;
+
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -16,7 +19,6 @@ class Credentials {
     Credentials() {
     }
     @Id
-    @MapsId()
     @Column(value="account_id")
     private Long userId;
     
