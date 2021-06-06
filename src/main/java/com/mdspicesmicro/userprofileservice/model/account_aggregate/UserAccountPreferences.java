@@ -5,10 +5,10 @@ package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
 class UserAccountPreferences {
 
-    /**
-     * Default constructor
-     */
-    UserAccountPreferences() {
+   
+	
+	
+    UserAccountPreferences(Boolean twostp, ) {
     }
 
     /**

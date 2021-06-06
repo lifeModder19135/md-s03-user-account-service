@@ -3,16 +3,12 @@ package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 import java.nio.file.Path;
 
 import org.springframework.data.relational.core.mapping.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.MapsId;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
-import lombok.Generated;
-import lombok.NoArgsConstructor;
 
 @Data
 @Table("PROFILE_INFO")

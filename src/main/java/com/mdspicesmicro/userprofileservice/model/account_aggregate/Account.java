@@ -3,25 +3,17 @@ package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.PrimaryKeyJoinColumns;
-import javax.persistence.SecondaryTable;
-import javax.persistence.SecondaryTables;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 
-import com.mdspicesmicro.userprofileservice.model.user_aggregate.User;
+//import com.mdspicesmicro.userprofileservice.model.user_aggregate.User;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,7 +27,7 @@ public class Account {
 	
 
 	@Id
-	@GeneratedValue( )
+	//@GeneratedValue( )
 	@Column(value="account_id")
     private Long accountId;
     
@@ -69,25 +61,25 @@ public class Account {
 	@Autowired
     private AccountState acctState;
     
-    // Currently has no purpose, but that will change with time
-    
-    //private AccountMetrics metrics;
     
     @Builder
     public Account(Long userId, Credentials cred, UserProfileInfo info){
     	this.userId = userId;
     	this.credentials = cred;
-    	this.userProfileInfo = info;
-    	
-    	
+    	this.userProfileInfo = info;   
     	
     }
+    
+    
+   
 
 }
 
 
-//  Below is the old version of the class def. Had 2 versions of this class under different
-//  names. Above is the version I chose to keep. Below is the extra, just in case...
+
+
+
+
 
 /*
 package com.mdspicesmicro.userprofileservice.model.account_aggregate;

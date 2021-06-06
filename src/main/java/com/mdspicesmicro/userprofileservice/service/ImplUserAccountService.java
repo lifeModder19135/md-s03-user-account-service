@@ -7,6 +7,7 @@ public class ImplUserAccountService implements UserAccountService {
 	@Override
 	public Account createNewAccountForUnregisteredUser() {
 		// TODO
+		Account acct = new Account(, null, null);
 		return null;
 	}
 
