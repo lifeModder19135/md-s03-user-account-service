@@ -1,6 +1,7 @@
 package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 
@@ -17,7 +18,8 @@ class UserAccountPreferences {
 //    	this.accountId = id;
 //    }
    
-   private final Long accountId;
+    @Id
+	private final Long accountId;
     
     @Column(name="two-step-verify-on")
     private Boolean twoStepVerifyEnabled;

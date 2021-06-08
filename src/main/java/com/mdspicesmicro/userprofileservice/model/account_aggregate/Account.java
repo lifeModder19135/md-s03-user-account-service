@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,12 +38,12 @@ public class Account {
 	@ManyToOne
     private Long userId;
     
-	@Setter
+// 	@Setter
 	@OneToOne
 	@JoinColumn(name="accountId")
     private Credentials credentials;
     
-	@Setter
+//	@Setter
 	@OneToOne
 	@JoinColumn(name="accountId")
     private UserProfileInfo userProfileInfo;

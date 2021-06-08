@@ -1,14 +1,20 @@
 package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
+import javax.persistence.Entity;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 
-
+@Entity
+@Getter
+@Setter
 @Data
 @Table("CREDENTIALS")
 class Credentials {
@@ -17,19 +23,19 @@ class Credentials {
     Credentials() {
     }
     @Id
-    @Column(value="account_id")
+    @Column(value="user_id")
     private Long userId;
     
 
-    @Column(value="account_id")
+    @Column(value="username")
     private String username;
 
     
-    @Column(value="account_id")
-    private Password password;
+    @Column(value="safe_pwd")
+    private String hashedPassword;
 
 
-    @Column(value="account_id")
-    private Password bcrypt;
+//    @Column(value="account_id")
+//    private Password bcrypt;
 
 }
