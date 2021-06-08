@@ -3,6 +3,9 @@ package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -27,7 +30,7 @@ public class Account {
 	
 
 	@Id
-	@GeneratedValue(generationType=)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(value="account_id")
     private Long accountId;
     
@@ -37,36 +40,37 @@ public class Account {
     private Long userId;
     
 	@Setter
-	@Column(value="credentials")
 	@OneToOne
-	@PrimaryKeyJoinColumn(name="accountId")
+	@JoinColumn(name="accountId")
     private Credentials credentials;
     
 	@Setter
-	@Column(value="user_profile")
 	@OneToOne
-	@PrimaryKeyJoinColumn(name="accountId")
+	@JoinColumn(name="accountId")
     private UserProfileInfo userProfileInfo;
     
-	@Setter
-	@Column(value="account_credit")
+//	@Setter
 	@OneToOne
-	@PrimaryKeyJoinColumn(name="accountId")
+	@JoinColumn(name="accountId")
 	@Autowired
     private Credit acctCredit;
     
-	@Column(value="account_state")
 	@OneToOne
-	@PrimaryKeyJoinColumn(name="accountId")
+	@JoinColumn(name="accountId")
 	@Autowired
     private AccountState acctState;
+	
+	@OneToOne
+	@JoinColumn(name="accountId")
+	private UserAccountPreferences acctPrefs;
     
     
     @Builder
-    public Account(Long userId, Credentials cred, UserProfileInfo info){
+    public Account(Long userId, Credentials cred, UserProfileInfo info, UserAccountPreferences acctPrefs){
     	this.userId = userId;
     	this.credentials = cred;
-    	this.userProfileInfo = info;   
+    	this.userProfileInfo = info; 
+    	this.acctPrefs = acctPrefs;
     	
     }
     
