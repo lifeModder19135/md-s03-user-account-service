@@ -22,7 +22,6 @@ public class UserProfileInfo {
     }
     
     @Id
-    @MapsId
 	@Column(value="account_id")
     private Long accountId;
     
