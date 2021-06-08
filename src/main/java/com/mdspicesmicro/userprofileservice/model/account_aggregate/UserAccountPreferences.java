@@ -8,23 +8,18 @@ class UserAccountPreferences {
    
 	
 	
-    UserAccountPreferences(Boolean twostp, ) {
+    UserAccountPreferences(Boolean twostp, Boolean private, Theme theme) {
     }
 
-    /**
-     * 
-     */
-    //rivate AppViewTheme appViewTheme;
-
-    /**
-     * 
-     */
+   
+    
     private Boolean twoStepVerifyEnabled;
 
-    /**
-     * 
-     */
+    
     private Boolean detailsPrivate;
+    
+    
+    private Theme preferredTheme;
 
 
 }

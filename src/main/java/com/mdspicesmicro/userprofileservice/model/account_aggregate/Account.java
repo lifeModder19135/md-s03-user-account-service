@@ -27,7 +27,7 @@ public class Account {
 	
 
 	@Id
-	//@GeneratedValue( )
+	@GeneratedValue(generationType=)
 	@Column(value="account_id")
     private Long accountId;
     
