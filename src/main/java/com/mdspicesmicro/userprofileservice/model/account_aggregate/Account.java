@@ -38,17 +38,17 @@ public class Account {
 	@ManyToOne
     private Long userId;
     
-// 	@Setter
+ 	@Setter
 	@OneToOne
 	@JoinColumn(name="accountId")
     private Credentials credentials;
     
-//	@Setter
+	@Setter
 	@OneToOne
 	@JoinColumn(name="accountId")
     private UserProfileInfo userProfileInfo;
     
-//	@Setter
+	@Setter
 	@OneToOne
 	@JoinColumn(name="accountId")
 	@Autowired

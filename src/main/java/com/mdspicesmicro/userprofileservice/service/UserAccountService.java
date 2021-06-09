@@ -4,7 +4,7 @@ import com.mdspicesmicro.userprofileservice.model.account_aggregate.Account;
 
 public interface UserAccountService {
 	
-	Account createNewAccountForUnregisteredUser();
+	Account createNewAccountForUnregisteredUser(user);
 		
 	
 	Account createNewAccountForRegisteredUser();

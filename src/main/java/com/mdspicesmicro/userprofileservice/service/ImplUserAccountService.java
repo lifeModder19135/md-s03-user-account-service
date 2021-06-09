@@ -1,14 +1,15 @@
 package com.mdspicesmicro.userprofileservice.service;
 
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.Account;
+import com.mdspicesmicro.userprofileservice.model.account_aggregate.UserAccountPreferences;
 
 public class ImplUserAccountService implements UserAccountService {
 
 	@Override
-	public Account createNewAccountForUnregisteredUser() {
+	public Account createNewAccountForUnregisteredUser(String userId) {
 		// TODO
-		Account acct = new Account(, null, null);
-		return null;
+		Account acct = Account.builder().acctPrefs(null). .build();
+		return acct;
 	}
 
 	@Override
