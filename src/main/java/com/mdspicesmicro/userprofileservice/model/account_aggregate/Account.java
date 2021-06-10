@@ -54,11 +54,13 @@ public class Account {
 	@Autowired
     private Credit acctCredit;
     
+	@Setter
 	@OneToOne
 	@JoinColumn(name="accountId")
 	@Autowired
     private AccountState acctState;
 	
+	@Setter
 	@OneToOne
 	@JoinColumn(name="accountId")
 	private UserAccountPreferences acctPrefs;

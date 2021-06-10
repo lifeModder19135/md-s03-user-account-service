@@ -2,13 +2,14 @@ package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
 import java.nio.file.Path;
 
-import org.springframework.data.relational.core.mapping.Column;
-import javax.persistence.MapsId;
+import javax.persistence.Column;
+import javax.persistence.Id;
+//import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 @Data
 @Table("PROFILE_INFO")
@@ -22,13 +23,15 @@ public class UserProfileInfo {
     }
     
     @Id
-	@Column(value="account_id")
+	@Column(name="account_id")
     private Long accountId;
     
-    @Column(value="profile_pic")
+    @Accessors
+    @Column(name="profile_pic")
     private Path profilePicture;
     
-    @Column(value="bio_content")
+    
+    @Column(name="bio_content")
     private String bioText;
 
 

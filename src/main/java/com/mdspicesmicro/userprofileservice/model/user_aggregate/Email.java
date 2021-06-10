@@ -1,9 +1,17 @@
 package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
-public class Email {
+import javax.persistence.Entity;
+
+import lombok.Getter;
+import lombok.experimental.Accessors;
+
+@Entity 
+class Email {
 	
-	private String cleanedEmail;
+	@Getter
+	private final String cleanedEmail;
 	
+	@Accessors
 	private String userId;
 	
 	private String domain;
@@ -20,7 +28,10 @@ public class Email {
 		this.domain = despace(domain);
 		this.suffix = despace(suffix);
 		if (suffix.length() == 3) {
+			throw new RuntimeException("Not a valid email -- Invalid extension!");
+		}else {
 			this.cleanedEmail = userId + "@" + domain +"." + suffix;
+
 		}
 	}
 

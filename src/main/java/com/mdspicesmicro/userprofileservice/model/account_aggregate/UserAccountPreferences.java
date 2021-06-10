@@ -2,10 +2,14 @@ package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 
 @AllArgsConstructor
+@Data
+@Table(name="ACCOUNT_PREFS")
 class UserAccountPreferences {
 
    
