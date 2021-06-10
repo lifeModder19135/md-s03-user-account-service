@@ -17,7 +17,7 @@ public class UserProfileInfo {
     
     public UserProfileInfo() {
     	this.bioText = "";
-    	this.profilePicture = null;  //need to add ref to stock photo later
+    	this.profilePicture = null;  //need to add a ref to stock photo later
     	
     }
     
