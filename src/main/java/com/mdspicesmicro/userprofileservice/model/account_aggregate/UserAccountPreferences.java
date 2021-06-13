@@ -1,14 +1,18 @@
 package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
+@Entity
 @Data
 @Table(name="ACCOUNT_PREFS")
 @Builder
@@ -25,7 +29,7 @@ class UserAccountPreferences {
 //    }
    
     @Id
-	private final Long accountId;
+	private Long accountId;
     
     @Column(name="two-step-verify-on")
     private Boolean twoStepVerifyEnabled;
