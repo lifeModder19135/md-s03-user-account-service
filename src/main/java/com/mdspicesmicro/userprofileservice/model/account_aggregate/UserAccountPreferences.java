@@ -5,11 +5,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @AllArgsConstructor
 @Data
 @Table(name="ACCOUNT_PREFS")
+@Builder
 class UserAccountPreferences {
 
    

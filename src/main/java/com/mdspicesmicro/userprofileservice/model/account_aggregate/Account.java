@@ -69,7 +69,7 @@ public class Account {
     @Builder
     public Account(Long userId, Credentials cred, UserProfileInfo info, UserAccountPreferences acctPrefs){
     	this.userId = userId;
-    	this.credentials = cred;
+    	this.credentials = Credentials.builder
     	this.userProfileInfo = info; 
     	this.acctPrefs = acctPrefs;
     	

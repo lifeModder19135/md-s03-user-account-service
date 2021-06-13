@@ -1,10 +1,13 @@
 package com.mdspicesmicro.userprofileservice.service;
 
+import org.springframework.stereotype.Service;
+
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.Account;
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.Credentials;
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.UserAccountPreferences;
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.UserProfileInfo;
 
+@Service
 public class ImplUserAccountService implements UserAccountService {
 
 	

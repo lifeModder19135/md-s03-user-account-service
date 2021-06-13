@@ -8,9 +8,7 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 
 @AllArgsConstructor
@@ -18,6 +16,7 @@ import lombok.Setter;
 @Entity
 @Data
 @Table("CREDENTIALS")
+
 class Credentials {
 
    
@@ -34,8 +33,5 @@ class Credentials {
     @Column(value="safe_pwd")
     private String hashedPassword;
 
-
-//    @Column(value="account_id")
-//    private Password bcrypt;
 
 }
