@@ -42,11 +42,11 @@ class AccountTest {
 		
 		assertNotNull(testAccount.getAccountId());
 		assertNotNull(testAccount.getUserId());
-		assertNotNull(testAccount.getAcctCredit() );
+		assertNotNull(testAccount.getAcctCredit());
 		assertNotNull(testAccount.getAcctPrefs());
-		assertNotNull(testAccount );
-		assertNotNull(testAccount );
-		assertNotNull(testAccount );
+		assertNotNull(testAccount.getAcctState());
+		assertNotNull(testAccount.getCredentials());
+		assertNotNull(testAccount.getUserProfileInfo());
 		
 		assertSame(testAccount.getCredentials(), credMock);
 		assertSame(testAccount.getUserId(), userIdMock);
