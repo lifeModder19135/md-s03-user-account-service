@@ -6,25 +6,25 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Getter
-@Setter
 @Data
 @Table("CREDENTIALS")
 class Credentials {
 
    
-    Credentials() {
-    }
+    
     @Id
     @Column(value="account_id")
-    private Long accountId;
+    private  Long accountId;
     
 
     @Column(value="username")
