@@ -21,13 +21,14 @@ class AccountTest {
 	@Mock Long userIdMock;
 	@Mock Credentials credMock;
 	@Mock UserProfileInfo infoMock;
+	@Mock UserAccountPreferences prefsMock;
 	
 	@BeforeEach
 	void setParams(){
 		
-		when(testAccount.getCred()).thenreturn("$0.00");
-		when(testAccount.getUserId()).thenreturn(42);
-		when(testAccount.getInfo()).thenreturn("user data");
+		//when(testAccount.getCredentials()).thenReturn(credMock);
+		//when(testAccount.getUserId()).thenReturn(userIdMock);
+		//when(testAccount.getUserProfileInfo()).thenReturn(infoMock);
 		
 	}
 	
@@ -35,16 +36,33 @@ class AccountTest {
 		
 	
 	@Test
-	void testThreeArgConstructerReturnsProperObject() {
+	void testFourArgConstructerReturnsProperObject() {
 		
-		testAccount = Account.builder().cred(credMock).userId(userIdMock).info(infoMock).build();
+		testAccount = new Account(userIdMock, credMock, infoMock, prefsMock);
 		
-		assertSame(testAccount.getCred(), "$0.00");
-		assertSame()testAccount.get(), 42);
-		assertSame(testAccount.get(), "user data");
+		assertNotNull(testAccount.getAccountId());
+		assertNotNull(testAccount.getUserId());
+		assertNotNull(testAccount.getAcctCredit() );
+		assertNotNull(testAccount.getAcctPrefs());
+		assertNotNull(testAccount );
+		assertNotNull(testAccount );
+		assertNotNull(testAccount );
+		
+		assertSame(testAccount.getCredentials(), credMock);
+		assertSame(testAccount.getUserId(), userIdMock);
+		assertSame(testAccount.getUserProfileInfo(), infoMock);
 		
 	}
 	
-	void ensureBuilderBehavesAsExplicitCall()
+	void ensureBuilderBehavesAsExplicitCall() {
+		
+		testAccount = Account.builder().cred(credMock).userId(userIdMock).info(infoMock).build();
+		
+		assertSame(testAccount.getCredentials(), credMock);
+		assertSame(testAccount.getUserId(), userIdMock);
+		assertSame(testAccount.getUserProfileInfo(), infoMock);
+		
+		
+	}
 
 }

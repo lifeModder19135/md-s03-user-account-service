@@ -18,8 +18,10 @@ import org.springframework.data.relational.core.mapping.Column;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Getter
 @Entity
 @Table(name="USER_ACCOUNTS")
@@ -69,10 +71,11 @@ public class Account {
     @Builder
     public Account(Long userId, Credentials cred, UserProfileInfo info, UserAccountPreferences acctPrefs){
     	this.userId = userId;
-    	this.credentials = Credentials.builder
+    	this.credentials = Credentials.builder().build();
     	this.userProfileInfo = info; 
     	this.acctPrefs = acctPrefs;
-    	
+//    	this.acctCredit = new Credit(this.accountId);
+//    	this.acctState 
     }
     
     

@@ -13,7 +13,8 @@ import org.springframework.data.annotation.Id;
 public class Credit {
 
 
-    public Credit() {
+    public Credit(Long id) {
+    	this.accountId = id;
     	this.amount = 0.00;
     	this.status = CreditStatus.PENDING;
     }

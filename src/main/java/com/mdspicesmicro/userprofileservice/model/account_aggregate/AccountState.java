@@ -12,10 +12,9 @@ import lombok.Data;
 @Table("ACCT_STATE")
 class AccountState {
 
-    /**
-     * Default constructor
-     */
-    AccountState() {
+  
+    AccountState(Long id) {
+    	this.accountId = id;
     	this.ageInDays = 0;
     	this.pwdStrength = null;
     	this.status = AccountStatus.PENDING;
