@@ -23,8 +23,8 @@ class Credentials {
     Credentials() {
     }
     @Id
-    @Column(value="user_id")
-    private Long userId;
+    @Column(value="account_id")
+    private Long accountId;
     
 
     @Column(value="username")

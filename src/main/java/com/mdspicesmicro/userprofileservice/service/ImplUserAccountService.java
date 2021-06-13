@@ -5,10 +5,15 @@ import com.mdspicesmicro.userprofileservice.model.account_aggregate.UserAccountP
 
 public class ImplUserAccountService implements UserAccountService {
 
-	@Override
+	
 	public Account createNewAccountForUnregisteredUser(String userId) {
 		// TODO
-		Account acct = Account.builder().acctPrefs(null). .build();
+		Account acct = Account.builder()
+				.userId(null)
+				.credentials(null)
+				.userProfileInfo(null)
+				.acctPrefs(null)
+				.build();
 		return acct;
 	}
 
