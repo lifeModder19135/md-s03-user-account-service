@@ -1,8 +1,8 @@
 package com.mdspicesmicro.userprofileservice.service;
 
-import com.mdspicesmicro.userprofileservice.model.user_aggregate.Account;
+import com.mdspicesmicro.userprofileservice.model.account_aggregate.Account;
 
-public interface AccountService {
+interface AccountService {
 	
 	/*TODO
 	 *    !!! private scope -- only accessed by other class methods  !!!
@@ -41,8 +41,14 @@ public interface AccountService {
 	 */
 	
 	
-	private Account createEmptyAccountWithId();
+	private Account createEmptyAccountWithId() {
+		return new Account();
+	};
 	
-	private Account populateCredentialsForAccountById(Long id, String uname, String hashedPwd); 
+	private Account populateCredentialsWithInstanceForAccountById(Long id, String uname, String hashedPwd) {
+		Account acct = createEmptyAccountWithId();
+	}; 
+	
+	
 
 }
