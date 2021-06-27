@@ -12,12 +12,12 @@ public class Password {
     /**
      * 
      */
-    private String hashedPassword;
+  //  private String hashedPassword;
 
     /**
      * 
      */
-    private Long pwdId;
+  //  private Long pwdId;
 
 
 }
