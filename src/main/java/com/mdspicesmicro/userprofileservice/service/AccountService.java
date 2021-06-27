@@ -1,6 +1,13 @@
 package com.mdspicesmicro.userprofileservice.service;
 
+import java.nio.file.Path;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.Account;
+import com.mdspicesmicro.userprofileservice.model.account_aggregate.AcctRepository;
+import com.mdspicesmicro.userprofileservice.model.account_aggregate.Theme;
+import com.mdspicesmicro.userprofileservice.model.repositories.AccountRepository;
 
 interface AccountService {
 	
@@ -40,15 +47,17 @@ interface AccountService {
 	 * 
 	 */
 	
+	@Autowired 
+	AcctRepository rft;
 	
-	private Account createEmptyAccountWithId() {
-		return new Account();
+	
+	private Account createNewAccountForUser(Long userId, String uname, String hashedPwd, Path profilePicture, String biotext, Boolean twostp, Boolean privacyEnabled,  Theme theme) {
+		Account acct = new Account(userId, uname, hashedPwd, profilePicture, biotext, twostp, privacyEnabled,  theme);
+		r.save(acct);
+		return r;
 	};
 	
-	private Account addCredentialsToAccountById(Long id, String uname, String hashedPwd) {
-		Account acct = createEmptyAccountWithId();
-		Account.builder().acctPrefs(new UserAccountPreferences).build();
-	}; 
+	
 	
 	
 

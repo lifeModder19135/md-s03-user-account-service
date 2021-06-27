@@ -71,7 +71,7 @@ public class Account {
     
     
     @Builder
-    public Account(Long userId, String uname, String hashedPwd, Path profilePicture, String biotext, Long id, Boolean twostp, Boolean privacyEnabled,  Theme theme){
+    public Account(Long userId, String uname, String hashedPwd, Path profilePicture, String biotext, Boolean twostp, Boolean privacyEnabled,  Theme theme){
     	this.userId = userId;
     	this.credentials = Credentials.builder().accountId(this.getAccountId()).username(uname).hashedPassword(hashedPwd).build();
     	this.userProfileInfo = UserProfileInfo.builder().accountId(this.getAccountId()).bioText(biotext).profilePicture(profilePicture).build(); 
