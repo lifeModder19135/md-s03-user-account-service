@@ -27,7 +27,7 @@ class AccountState {
   
     AccountState(Long id) {
     	this.accountId = id;
-    	//this.ageInDays = 0;
+    	// this.ageInDays = 0;
     	this.pwdStrength = null;
     	this.status = AccountStatus.PENDING;
     	this.createdDate = LocalDate.now();
@@ -62,7 +62,8 @@ class AccountState {
     
     int getAgeInDays() {
     	LocalDate now = LocalDate.now();
-    	return (int) ChronoUnit.DAYS.between(createdDate, now);
+    	int ageInDays = (int) ChronoUnit.DAYS.between(createdDate, now);
+    	return ageInDays;
     }
     
 }

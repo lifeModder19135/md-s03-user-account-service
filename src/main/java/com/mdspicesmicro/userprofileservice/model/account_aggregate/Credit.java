@@ -3,6 +3,7 @@ package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import lombok.Builder;
 import lombok.Data;
 
 import org.springframework.data.annotation.Id;
@@ -12,7 +13,7 @@ import org.springframework.data.annotation.Id;
 @Table("CREDIT")
 public class Credit {
 
-
+	@Builder
     public Credit(Long id) {
     	this.accountId = id;
     	this.amount = 0.00;
