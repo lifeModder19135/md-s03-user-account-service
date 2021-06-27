@@ -2,6 +2,8 @@ package com.mdspicesmicro.userprofileservice.model.account_aggregate;
 
 
 
+import java.nio.file.Path;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -69,10 +71,10 @@ public class Account {
     
     
     @Builder
-    public Account(Long userId, Credentials cred, UserProfileInfo info, UserAccountPreferences acctPrefs){
+    public Account(Long userId, String uname, String hashedPwd, Path profilePicture, String biotext, UserAccountPreferences acctPrefs){
     	this.userId = userId;
-    	this.credentials = Credentials.builder().build();
-    	this.userProfileInfo = info; 
+    	this.credentials = Credentials.builder().accountId(this.getAccountId()).username(uname).hashedPassword(hashedPwd).build();
+    	this.userProfileInfo = UserProfileInfo.builder().accountId(this.getAccountId()).bioText(biotext).profilePicture(profilePicture).build(); 
     	this.acctPrefs = acctPrefs;
 //    	this.acctCredit = new Credit(this.accountId);
 //    	this.acctState 

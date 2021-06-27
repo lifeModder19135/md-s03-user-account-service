@@ -18,13 +18,13 @@ interface AccountService {
 	 * 
 	 *   07 build create method for Account (uname, pwd, picpath, bioText, 2stp, privacy, theme)
 	 *
-	 *   08 build update method for Account (uname)
-	 *   09 build update method for Account (pwd)
-	 *   10 build update method for Account (picpath)
-	 *   11 build update method for Account (bioText)
-	 *   12 build update method for Account (2stp)
-	 *   13 build update method for Account (privacy)
-	 *   14 build update method for Account (theme)
+	 *   08 build update method for Account (id, uname)
+	 *   09 build update method for Account (id, pwd)
+	 *   10 build update method for Account (id, picpath)
+	 *   11 build update method for Account (id, bioText)
+	 *   12 build update method for Account (id, 2stp)
+	 *   13 build update method for Account (id, privacy)
+	 *   14 build update method for Account (id, theme)
 	 * 
 	 *  !!! private scope -- only accessed by other class methods  !!!
 	 * 
@@ -45,8 +45,9 @@ interface AccountService {
 		return new Account();
 	};
 	
-	private Account populateCredentialsWithInstanceForAccountById(Long id, String uname, String hashedPwd) {
+	private Account addCredentialsToAccountById(Long id, String uname, String hashedPwd) {
 		Account acct = createEmptyAccountWithId();
+		Account.builder().acctPrefs(new UserAccountPreferences).build();
 	}; 
 	
 	
