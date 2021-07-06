@@ -1,28 +1,27 @@
 package com.mdspicesmicro.userprofileservice.service;
 
+import com.mdspicesmicro.userprofileservice.model.ImplAccountFactory;
+import com.mdspicesmicro.userprofileservice.model.account_aggregate.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mdspicesmicro.userprofileservice.model.account_aggregate.Account;
-import com.mdspicesmicro.userprofileservice.model.account_aggregate.Credentials;
-import com.mdspicesmicro.userprofileservice.model.account_aggregate.UserAccountPreferences;
-import com.mdspicesmicro.userprofileservice.model.account_aggregate.UserProfileInfo;
+import java.nio.file.Path;
 
 @Service
 public class ImplUserAccountService implements UserAccountService {
 
-	
-	public Account createNewAccountForUnregisteredUser(Long userId, Credentials cred, UserProfileInfo info, UserAccountPreferences acctPrefs) {
+	@Autowired
+	ImplAccountFactory factory;
+	@Override
+	public Account createNewAccountForUnregisteredUser(Long userId, String uname, String hashedPwd, Path profilePicture,
+													   String biotext, Boolean twostp, Boolean privacyEnabled, Theme theme) {
 		// TODO
-		Account acct = Account.builder()
-				.userId(userId)
-				.credentials(cred)
-				.userProfileInfo(info)
-				.acctPrefs(acctPrefs)
-				.build();
+
+		Account acct = factory.buildAcct(userId, uname, hashedPwd, profilePicture, biotext, twostp, privacyEnabled, theme);
 		return acct;
 	}
 
-	@Override
+
 	public Account createNewAccountForRegisteredUser() {
 		// TODO Auto-generated method stub
 		return null;
