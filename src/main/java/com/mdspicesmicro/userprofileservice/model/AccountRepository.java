@@ -1,4 +1,4 @@
-package com.mdspicesmicro.userprofileservice.model.repositories;
+package com.mdspicesmicro.userprofileservice.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

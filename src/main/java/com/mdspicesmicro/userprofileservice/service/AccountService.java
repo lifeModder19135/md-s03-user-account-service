@@ -4,10 +4,10 @@ import java.nio.file.Path;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.mdspicesmicro.userprofileservice.model.AccountRepository;
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.Account;
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.AcctRepository;
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.Theme;
-import com.mdspicesmicro.userprofileservice.model.repositories.AccountRepository;
 
 interface AccountService {
 	
@@ -47,8 +47,7 @@ interface AccountService {
 	 * 
 	 */
 	
-	@Autowired 
-	AcctRepository rft;
+	public AccountRepository rft;
 	
 	
 	private Account createNewAccountForUser(Long userId, String uname, String hashedPwd, Path profilePicture, String biotext, Boolean twostp, Boolean privacyEnabled,  Theme theme) {
