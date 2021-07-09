@@ -1,5 +1,8 @@
 package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 import javax.persistence.Embedded;
@@ -13,17 +16,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="USERS")
 public class User {
 
- 
-    
-    public User() {
-    }
-
-     
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;

@@ -8,4 +8,7 @@ import java.nio.file.Path;
 public interface AccountFactory {
     public Account buildAcct(Long userId, String uname, String hashedPwd, Path profilePicture,
                              String biotext, Boolean twostp, Boolean privacyEnabled, Theme theme);
+
+    public Account buildAcctWithoutUserId(String uname, String hashedPwd, Path profilePicture,
+                             String biotext, Boolean twostp, Boolean privacyEnabled, Theme theme);
 }
