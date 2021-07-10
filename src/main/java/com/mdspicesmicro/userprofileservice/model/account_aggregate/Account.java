@@ -75,56 +75,12 @@ public class Account {
     	this.userId = userId;
     	this.credentials = Credentials.builder().accountId(this.getAccountId()).username(uname).hashedPassword(hashedPwd).build();
     	this.userProfileInfo = UserProfileInfo.builder().accountId(this.getAccountId()).bioText(biotext).profilePicture(profilePicture).build(); 
-    	this.acctPrefs = UserAccountPreferences.builder().accountId(getAccountId()).twoStepVerifyEnabled(twostp).preferredTheme(theme).build();
+    	this.acctPrefs = UserAccountPreferences.builder().accountId(getAccountId()).twoStepVerifyEnabled(twostp).detailsPrivate(privacyEnabled).preferredTheme(theme).build();
     	this.acctCredit = new Credit(this.accountId);
-      	this.acctState = new AccountState(this.getAccountId());
+      	this.acctState = new AccountState(this.accountId);
     }
-    
-    
-   
+
+
+
 
 }
-
-
-
-
-
-
-
-/*
-package com.mdspicesmicro.userprofileservice.model.account_aggregate;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import com.mdspicesmicro.userprofileservice.model.user_aggregate.User;
-
-
-@Entity
-@Table(name="USER_ACCOUNTS")
-public class Account {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long accountId;
-	
-	@Column(name="CREDENTIALS")
-	@OneToOne
-	private Credentials credentials;
-	
-	@Column(name="CREDIT")
-	@OneToOne
-	private Credit credit;
-	
-	@Column(name="USER_ID")
-	@ManyToOne
-	private User user;
-
-}
-
-*/
