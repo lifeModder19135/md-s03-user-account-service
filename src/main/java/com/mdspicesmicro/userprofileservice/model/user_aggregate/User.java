@@ -5,17 +5,8 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -32,7 +23,7 @@ public class User {
     @OneToOne
     private UserDetails details;
 
-    @OneToMany
+    @ElementCollection
     @JoinColumn(name="USER_ID")
     private List<Device> userDevices;
     
@@ -44,7 +35,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserStatus status;
 
-    @OneToMany
+    @ElementCollection
     @JoinColumn(name="ADDRESSEE_ID")
     private List<Address> assocAddresses;
     
@@ -53,5 +44,7 @@ public class User {
 
     @Embedded
     private UserContactInfo contactInfo;
+
+
 
 }

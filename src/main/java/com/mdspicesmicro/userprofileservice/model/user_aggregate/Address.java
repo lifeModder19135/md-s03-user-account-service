@@ -1,15 +1,12 @@
 package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 import org.springframework.data.annotation.Id;
 
 @Entity
+@Embeddable
 @Table(name = "DEVICE")
 public class Address {
 
