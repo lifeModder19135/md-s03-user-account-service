@@ -79,6 +79,11 @@ public class AccountFactoryImpl implements AccountFactory{
 			acctBldr.theme(theme);
 		}
 		
+		return acctBldr.build()
+	}
+	
+	public Account createAccount(Long userId, String uname, String hashedPwd) {
+		return createAccount(userId, uname, hashedPwd, null, null, null, null, null);
 	}
 
 }

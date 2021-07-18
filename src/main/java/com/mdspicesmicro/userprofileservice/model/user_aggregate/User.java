@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -12,7 +13,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name="USERS")
-@Builder
 public class User {
 
     @Id
@@ -44,7 +44,13 @@ public class User {
 
     @Embedded
     private UserContactInfo contactInfo;
-
-
+    
+    
+    User(UserRole role, String fname, String lname, int age, Gender gender, Email priEmail, Email secEmail, PhoneNumber priPhone, PhoneNumber secPhone, String facebookAddr, String twitterId){
+    	this.userRole = role;
+    	this.details = UserDetails.builder().userId(this.userId).fName(fname).lName(lname).age(age).gender(gender).build();
+    	this.userDevices = new ArrayList();
+    	
+    }
 
 }
