@@ -1,6 +1,7 @@
 package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name="USERS")
+@Builder
 public class User {
 
     @Id
@@ -24,7 +26,6 @@ public class User {
     private UserDetails details;
 
     @ElementCollection
-    @JoinColumn(name="USER_ID")
     private List<Device> userDevices;
     
     /*
@@ -36,7 +37,6 @@ public class User {
     private UserStatus status;
 
     @ElementCollection
-    @JoinColumn(name="ADDRESSEE_ID")
     private List<Address> assocAddresses;
     
     @Embedded

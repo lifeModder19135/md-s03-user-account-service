@@ -70,7 +70,7 @@ public class Account {
 	private UserAccountPreferences acctPrefs;
     
     
-
+	@Builder
     public Account(Long userId, String uname, String hashedPwd, Path profilePicture, String biotext, Boolean twostp, Boolean privacyEnabled,  Theme theme){
     	this.userId = userId;
     	this.credentials = Credentials.builder().accountId(this.getAccountId()).username(uname).hashedPassword(hashedPwd).build();

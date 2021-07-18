@@ -9,13 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="USER_DETAILS")
+@Builder
 class UserDetails {
 
-    
-    UserDetails() {
-    }
 
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,6 +1,7 @@
 package com.mdspicesmicro.userprofileservice.service;
 
 import java.nio.file.Path;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -9,7 +10,7 @@ import com.mdspicesmicro.userprofileservice.model.account_aggregate.Account;
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.AcctRepository;
 import com.mdspicesmicro.userprofileservice.model.account_aggregate.Theme;
 
-interface AccountService {
+class AccountService {
 	
 	/*TODO
 	 *    !!! private scope -- only accessed by other class methods  !!!
@@ -47,13 +48,20 @@ interface AccountService {
 	 * 
 	 */
 	
-	public AccountRepository rft;
+	AccountRepository rft;
+	
+	Boolean exists(Long acct_id) {
+		Optional<Account> acct = rft.findById(acct_id);
+		if (acct==null){return false;} 
+		else {return true;}
+	}
 	
 	
-	private Account createNewAccountForUser(Long userId, String uname, String hashedPwd, Path profilePicture, String biotext, Boolean twostp, Boolean privacyEnabled,  Theme theme) {
+	// returns true if account exists after running
+	Boolean createNewAccountForUser(Long userId, String uname, String hashedPwd, Path profilePicture, String biotext, Boolean twostp, Boolean privacyEnabled,  Theme theme) {
 		Account acct = new Account(userId, uname, hashedPwd, profilePicture, biotext, twostp, privacyEnabled,  theme);
-		r.save(acct);
-		return r;
+		rft.save(acct);
+		return this.exists(acct.getAccountId());
 	};
 	
 	

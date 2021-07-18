@@ -1,8 +1,9 @@
 package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
 
+import java.util.Optional;
+
 import javax.persistence.Embeddable;
-import javax.validation.constraints.Email;
 
 @Embeddable
 class UserContactInfo {
