@@ -9,9 +9,12 @@ public class UserFactoryImpl implements UserFactory {
 	@Override
 	public User createUser(UserRole role, String fname, String lname, int age, Gender gender, Email priEmail,
 			                                 Email secEmail, PhoneNumber priPhone, PhoneNumber secPhone, String facebookAddr, String twitterId) {
-		if(role == null) {
-			this.role =
-		}
+		User.b
+		if(role == null ||  {
+			this.role = UserRole.REGISTERED;
+		} else if(role.compareTo(UserRole.Guest) >= 0) {
+			this.role = role
+		} else {something}
 		return null;
 	}
 

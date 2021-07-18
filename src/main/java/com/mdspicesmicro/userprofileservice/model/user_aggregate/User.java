@@ -58,7 +58,7 @@ public class User {
     
     Logger logger = LoggerFactory.getLogger(User.class);
     
-    
+    @Builder
     User(UserRole role, String fname, String lname, int age, Gender gender, UserStatus status, Email priEmail, Email secEmail, PhoneNumber priPhone, PhoneNumber secPhone, String facebookAddr, String twitterId){
     	this.userRole = role;
     	this.details = UserDetails.builder().userId(this.userId).fName(fname).lName(lname).age(age).gender(gender).build();
