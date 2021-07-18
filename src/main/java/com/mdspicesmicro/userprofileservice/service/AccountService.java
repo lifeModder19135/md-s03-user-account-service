@@ -51,7 +51,7 @@ class AccountService {
 	AccountRepository rft;
 	
 	Boolean exists(Long acct_id) {
-		Optional<Account> acct = rft.findById(acct_id);
+		Account acct = rft.findById(acct_id);
 		if (acct==null){return false;} 
 		else {return true;}
 	}

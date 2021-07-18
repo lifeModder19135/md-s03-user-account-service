@@ -22,17 +22,21 @@ class Email {
 	
 	
 	
-	public Email(String identifier, String domain, String suffix) {
+	Email(String identifier, String domain, String suffix) {
 		super();
 		this.identifier = despace(identifier);
 		this.domain = despace(domain);
 		this.suffix = despace(suffix);
 		if (suffix.length() != 3) {
-			throw new RuntimeException("Not a valid email -- Invalid extension!");
+			throw new RuntimeException("Not a valid email -- extension type \"."+suffix+"\" not accepted!");
 		}else {
-			this.cleanedEmail = userId + "@" + domain +"." + suffix;
-
+			this.cleanedEmail = identifier + "@" + domain +"." + suffix;
 		}
+	}
+	
+	Email(String rawEmail){
+		String[] prts = rawEmail.split("\\@|\\.");
+		Email(prts[0], prts[1], prts[2]);
 	}
 
 

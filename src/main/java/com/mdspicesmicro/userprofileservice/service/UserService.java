@@ -23,11 +23,12 @@ public class UserService {
 	
 	// tests a uid to see if it is in DB
 	public Boolean isUser(Long uid) {
-			Optional<User> itis = ur.findById(uid);
-			if( itis == null) {
-				return false;
-			}else {
-				return true;
-			}
+		
+		User itis = ur.findById(uid);
+		if( itis == null) {
+			return false;
+		}else {
+			return true;
 		}
+	}
 }
