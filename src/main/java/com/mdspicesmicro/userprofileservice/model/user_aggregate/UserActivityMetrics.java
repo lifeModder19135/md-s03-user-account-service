@@ -2,12 +2,17 @@ package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
 import javax.persistence.Embeddable;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 @Embeddable
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 class UserActivityMetrics {
 
     
-    UserActivityMetrics() {
-    }
 
     
     private float avgDailyImpressions;
@@ -16,10 +21,10 @@ class UserActivityMetrics {
     private int daysSinceLastPurchase;
 
     
-    private double TotalAmtSpent;
+    private double totalAmtSpent;
 
     
-    private float frequencyOfOrders;
+    private double avgOrdersPerMonth;
 
     
     private Long mostPurchasedProductId;

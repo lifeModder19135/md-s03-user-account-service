@@ -1,16 +1,20 @@
 package com.mdspicesmicro.userprofileservice.model.user_aggregate;
 
 
-import java.util.Optional;
-
 import javax.persistence.Embeddable;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Embeddable
+@Builder
 class UserContactInfo {
 
-    
-    UserContactInfo() {
-    }
 
     
     private Long userId;

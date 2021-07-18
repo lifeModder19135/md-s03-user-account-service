@@ -12,7 +12,7 @@ class Email {
 	private final String cleanedEmail;
 	
 	@Accessors
-	private String userId;
+	private String identifier;
 	
 	private String domain;
 	
@@ -22,12 +22,12 @@ class Email {
 	
 	
 	
-	public Email(String userId, String domain, String suffix) {
+	public Email(String identifier, String domain, String suffix) {
 		super();
-		this.userId = despace(userId);
+		this.identifier = despace(identifier);
 		this.domain = despace(domain);
 		this.suffix = despace(suffix);
-		if (suffix.length() == 3) {
+		if (suffix.length() != 3) {
 			throw new RuntimeException("Not a valid email -- Invalid extension!");
 		}else {
 			this.cleanedEmail = userId + "@" + domain +"." + suffix;
